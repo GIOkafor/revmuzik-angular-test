@@ -1,9 +1,6 @@
 - replace &quot; with "" (quotationPipe)
-- add remove from favourites feature
+- add/remove from favourites feature
   - button
   - action on page
   - connect with API (optional)
   
-- add style
-  - page to match image
-  - scale up and down depending on viewport
