@@ -3,19 +3,21 @@
   <div *ngIf="items|async as items$">
     <h5>Random Jokes</h5>
     <ul>
-      <li *ngFor="let item of items$">{{item.id}} - {{item.joke}}
-        <button class="btn btn-primary" *ngIf="!isFavorite(item, favorites);else is_favorite" (click)="addFavorite(uid, item)">+</button>
-        <ng-template #is_favorite>
-          <button class="btn btn-danger" (click)="removeFavorite(uid, item)">-</button>
-        </ng-template>
+      <li *ngFor="let item of items$">
+        {{item.id}} - {{item.joke}}
+        <button class="btn btn-primary" (click)="addFavorite(uid, item)">
+          +
+        </button>
       </li>
     </ul>
   </div>
 
   <div class="favs">
-    <h5>Favorite Jokes: </h5>
+    <h5>Favorite Jokes:</h5>
     <div class="d-flex flex-column p-2">
-      <span class="mb-1" *ngFor="let fav of favorites|async">{{fav.id}} - {{fav.joke}}</span>
+      <span class="mb-1" *ngFor="let fav of favorites|async"
+        >{{fav.id}} - {{fav.joke}}</span
+      >
     </div>
   </div>
 </div>
